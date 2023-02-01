@@ -13,30 +13,30 @@ if (allWorks === null) {
 function getAllWorks(allWorks) {
     for (let i = 0; i < allWorks.length; i++) {
 
-        const project = allWorks[i]; // TROUVER UN AUTRE NOM DE VARIABLE
+        const projects = allWorks[i];
 
         // récupération de l'élément du DOM qui recevra la galerie photo
         const sectionGallery = document.querySelector(".gallery");
 
         // création de la balise <figure> pour un projet
-        const projectElement = document.createElement("figure");
+        const figure = document.createElement("figure");
 
         // création des balises situées à l'intérieur de <figure>
-        const imageElement = document.createElement("img");
-        // img.setAttribute("crossorigin", "anonymous");
-        imageElement.src = project.image;
+        const image = document.createElement("img");
+        image.setAttribute("crossorigin", "anonymous");
+        image.src = projects.imageUrl;
 
-        const figcaptionElement = document.createElement("figcaption");
-        figcaptionElement.innerText = project.figcaption;
+        const title = document.createElement("figcaption");
+        title.innerText = projects.title;
 
         // rattachement de <figure> à la <div class="gallery">
-        sectionGallery.appendChild(projectElement);
+        sectionGallery.appendChild(figure);
         // rattachement des <img> et <figcaption> à <figure>
-        projectElement.appendChild(imageElement);
-        projectElement.appendChild(figcaptionElement);
+        figure.appendChild(image);
+        figure.appendChild(title);
     }
     
 };
 
-// console.log(allWorks);
+console.log(allWorks);
 getAllWorks(allWorks);
