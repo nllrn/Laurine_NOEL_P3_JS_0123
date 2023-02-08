@@ -1,3 +1,4 @@
+// appel de l'API pour récuper tout les travaux
 let allWorks = window.localStorage.getItem("allWorks");
 
 if (allWorks === null) {
@@ -40,73 +41,78 @@ function getAllWorks(allWorks) {
 // console.log(allWorks);
 getAllWorks(allWorks);
 
+// <button> gérant l'affichage de tout les travaux de la gallerie
+const allBtn = document.querySelector(".allBtn");
+
+// utilisation de la function -filter pour filtrer les travaux souhaités
+allBtn.addEventListener("click", function(e) {
+    const allCategories = allWorks.filter(function (allWorks) {
+        return allWorks;
+    });
+    document.querySelector(".gallery").innerHTML = "";
+    getAllWorks(allCategories);
+    console.log(allCategories, 'tout les travaux');
+})
+
+// <button> gérant l'affichage des travaux concernant les 'objets' dans la gallerie
 const objectBtn = document.querySelector(".objectBtn");
 
-objectBtn.addEventListener("click", function() {
+// utilisation de la function -filter pour filtrer les travaux 'objets' -id= 1 souhaités
+objectBtn.addEventListener("click", function(e) {
     const objectCategory = allWorks.filter(function (allWorks) {
         return allWorks.category.id === 1;
     });
-    document.querySelector(".objectBtn").innerHTML = "";
+    document.querySelector(".gallery").innerHTML = "";
     getAllWorks(objectCategory);
     console.log(objectCategory, 'objets');
 });
 
+// <button> gérant l'affichage des travaux concernant les 'appartements' dans la gallerie
 const apartmentBtn = document.querySelector(".apartmentBtn");
 
-apartmentBtn.addEventListener("click", function() {
+// utilisation de la function -filter pour filtrer les travaux 'appartements' -id=2 souhaités
+apartmentBtn.addEventListener("click", function(e) {
     const apartmentCategory = allWorks.filter(function (allWorks) {
         return allWorks.category.id === 2;
     });
-    document.querySelector(".apartmentBtn").innerHTML = "";
+    document.querySelector(".gallery").innerHTML = "";
     getAllWorks(apartmentCategory);
     console.log(apartmentCategory, 'appartements');
 });
 
+// <button> gérant l'affichage des travaux concernant les 'hotêls et restaurants' dans la gallerie
 const hotelBtn = document.querySelector(".hotelBtn");
 
-hotelBtn.addEventListener("click", function() {
+// utilisation de la function -filter pour filtrer les travaux 'hotêls et restaurants' -id=3 souhaités
+hotelBtn.addEventListener("click", function(e) {
     const hotelCategory = allWorks.filter(function (allWorks) {
         return allWorks.category.id === 3;
     });
-    document.querySelector(".hotelBtn").innerHTML = "";
+    document.querySelector(".gallery").innerHTML = "";
     getAllWorks(hotelCategory);
     console.log(hotelCategory, 'hotels');
 });
 
-// let categories = window.localStorage.getItem("categories");
+// document.login.addEventListener('submit', function (e) {
+//    e.preventDefault();
 
-// if (categories === null) {
-//     const answer = await fetch("http://localhost:5678/api/categories");
-//     const categories = await answer.json();
+//    const user = {
+//     email: this.email.value,
+//     password: this.password.value,
+//    };
 
-//     const valeurCategories = JSON.stringify(categories);
-//     window.localStorage.setItem("categories", valeurCategories);
-// }else{
-//     categories = JSON.parse(categories);
-// };
-
-// function getCategories(getCategories){
-//     for (let i = 0; i < getCategories.length; i++) {
-
-//         const categories = getCategories[i];
-
-//         // const allBtn = document.querySelector(".allBtn");
-//         // allBtn.innerText = categories.category;
-
-//         const objectBtn = document.querySelector(".objectBtn");
-//         objectBtn.innerText = categories.categoryId = 1;
-//     }
-// };
-
-// getCategories(categories);
-
-// const objectBtn = document.querySelector(".objectBtn");
-
-// objectBtn.addEventListener("click", function(e) {
-//     const objectCategory = categories.filter(function (categories) {
-//         return categories.categoryId = 1;
-//     });
-//     document.querySelector(".objectBtn").innerHTML = "";
-//     getCategories(objectCategory);
-//     console.log(objectCategory, 'tas encore du boulot ma fille');
+//    console.log(user)
 // });
+
+// // appel de l'API pour gérer les connexions
+// let login = window.localStorage.getItem("login");
+
+// if (login === null) {
+//     const reponse = await fetch("http://localhost:5678/api/users/login");
+//     const login = await reponse.json();
+
+//     const valeurLogin = JSON.stringify(login);
+//     window.localStorage.setItem("login", valeurLogin);
+// }else{
+//     login = JSON.parse(login);
+// }
