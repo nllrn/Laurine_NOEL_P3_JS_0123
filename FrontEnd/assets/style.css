@@ -229,6 +229,7 @@ footer nav ul {
     display: flex;
     justify-content: flex-end;
     margin: 2em;
+    padding-top: 180px;
 }
 
 /* *** LOGIN PART *** */

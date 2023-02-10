@@ -13,7 +13,8 @@
     <link rel="stylesheet" href="./assets/style.css">
 
     <!-- lien javascript -->
-    <script type="module" src="js/script.js"></script>
+    <script type="module" src="js/login.js"></script>
+    
 </head>
 
 <body>
@@ -32,11 +33,11 @@
     <main>
         <section class="login">
             <h2>Log in</h2>
-            <form name="login" method="post">
+            <form name="formLogin" id="formLogin" method="post">
                 <label for="email">E-mail</label>
-                <input type="email" name="email">
+                <input type="email" name="email" id="email">
                 <label for="password">Mot de passe</label>
-                <input type="password" name="password">
+                <input type="password" name="password" id="password">
 
                 <button class="btn-connect" type="submit">Se connecter</button>
 
@@ -54,6 +55,8 @@
         </nav>
     </footer>
     
+    <script src="js/modal.js"></script>
+
 </body>
 
 </html>
