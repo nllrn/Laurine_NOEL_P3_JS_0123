@@ -9,24 +9,44 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Work+Sans&display=swap"
 		rel="stylesheet">
-	<meta name="description" content="">
+	<script src="https://kit.fontawesome.com/7c4ea9f910.js" crossorigin="anonymous"></script>
 	<link rel="stylesheet" href="./assets/style.css">
 
 	<!-- lien javascript -->
 	<script type="module" src="js/script.js"></script>
+	<script type="module" src="js/login.js"></script>
 </head>
 
 <body>
+
 	<header>
-		<h1>Sophie Bluel <span>Architecte d'intérieur</span></h1>
-		<nav>
-			<ul>
-				<li><a href="index.html">projets</a></li>
-				<li>contact</li>
-				<li><a href="login.html">login</a></li>
-				<li><img src="./assets/icons/instagram.png" alt="Instagram"></li>
-			</ul>
-		</nav>
+		<div class="black-bg edit">
+			<i class="fa-regular fa-pen-to-square"></i>
+			<span>Mode édition</span>
+			<a href="#modal" class="js-modal">publier les changements</a>
+
+			<aside id="modal" class="modal edit" aria-hidden="true" role="dialog" style="display:none;">
+				<section class="modal-wrapper js-modal-stop">
+					<h1> code html dans la modal</h1>
+					<button class="js-modal-close">
+						<span>Fermer</span>
+						<i class="fa-solid fa-xmark"></i>
+					</button>
+				</section>
+			</aside>
+		</div>
+		<div class="header">
+			<h1>Sophie Bluel <span>Architecte d'intérieur</span></h1>
+			<nav>
+				<ul>
+					<li><a href="index.html">projets</a></li>
+					<li>contact</li>
+					<li><a href="login.html">login</a></li>
+					<button onclick="logout(this)" type="button" class="bt-deconnect logout" >logout</button>
+					<li><img src="./assets/icons/instagram.png" alt="Instagram"></li>
+				</ul>
+			</nav>
+		</div>
 	</header>
 	<main>
 		<section id="introduction">
