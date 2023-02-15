@@ -14,49 +14,50 @@
 
     <!-- lien javascript -->
     <script type="module" src="js/login.js"></script>
-    
 </head>
 
 <body>
-    <header class="header">
-        <h1>Sophie Bluel <span>Architecte d'intérieur</span></h1>
-        <nav>
-            <ul>
-				<li><a href="index.html">projets</a></li>
-				<li>contact</li>
-				<li><a href="login.html">login</a></li>
-                <button onclick="logout(this)" type="button" class="bt-deconnect logout" >logout</button>
-				<li><img src="./assets/icons/instagram.png" alt="Instagram"></li>
-			</ul>
-        </nav>
-    </header>
 
-    <main>
-        <section class="login">
-            <h2>Log in</h2>
-            <form name="formLogin" id="formLogin" method="post">
-                <label for="email">E-mail</label>
-                <input type="email" name="email" id="email">
-                <label for="password">Mot de passe</label>
-                <input type="password" name="password" id="password">
+    <div class="body">
+        
+        <header class="header">
+            <h1>Sophie Bluel <span>Architecte d'intérieur</span></h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">projets</a></li>
+                    <li>contact</li>
+                    <li><a href="login.html">login</a></li>
+                    <li><img src="./assets/icons/instagram.png" alt="Instagram"></li>
+                </ul>
+            </nav>
+        </header>
 
-                <button class="btn-connect" type="submit">Se connecter</button>
+        <main>
+            <section class="login">
+                <h2>Log in</h2>
+                <form name="formLogin" id="formLogin" method="post">
+                    <label for="email">E-mail</label>
+                    <input type="email" name="email" id="email">
+                    <label for="password">Mot de passe</label>
+                    <input type="password" name="password" id="password">
 
-                <a href="#">Mot de passe oublié</a>
-            </form>
-            
-        </section>
-    </main>
+                    <button class="btn-connect" type="submit">Se connecter</button>
 
-    <footer>
-        <nav>
-            <ul>
-                <li>Mentions Légales</li>
-            </ul>
-        </nav>
-    </footer>
-    
-    <!-- <script src="js/modal.js"></script> -->
+                    <a href="#">Mot de passe oublié</a>
+                </form>
+
+            </section>
+        </main>
+
+        <footer>
+            <nav>
+                <ul>
+                    <li>Mentions Légales</li>
+                </ul>
+            </nav>
+        </footer>
+
+    </div>
 
 </body>
 

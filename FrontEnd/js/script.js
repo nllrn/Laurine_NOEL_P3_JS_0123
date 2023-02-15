@@ -92,3 +92,32 @@ hotelBtn.addEventListener("click", function(e) {
     getAllWorks(hotelCategory);
     // console.log(hotelCategory, 'hotels');
 });
+
+
+const logoutBtn = document.querySelector(".logout");
+
+    logoutBtn.addEventListener("click", function(e) {
+        e.preventDefault();
+        localStorage.removeItem("userToken");
+        window.location.href = "index.html";
+        // console.log(logoutBtn, 'raté')
+    });
+
+let userToken = localStorage.getItem("userToken");
+
+// const editHomepage = document.querySelector(".edit");
+    
+    if (userToken !== null) {
+        document.querySelector('.logout').style.display = 'block';
+        document.querySelector('.btn-connect').style.display = 'none';
+        document.querySelector(".edit").style.display = "block";
+        document.querySelector(".modif").style.display = "block";
+    }else{
+        document.querySelector('.logout').style.display = 'none';
+        document.querySelector('.btn-connect').style.display = 'block';
+        document.querySelector(".edit").style.display = "none";
+        document.querySelector(".modif").style.display = "none";
+    };
+    
+    // quand je suis connectée je mets un display: block; pour qu'il puisse être vu
+    // quandje suis déconnectée je mets un display: none; pour qu'il ne se voit pas

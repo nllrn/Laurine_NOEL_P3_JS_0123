@@ -14,66 +14,80 @@
 
 	<!-- lien javascript -->
 	<script type="module" src="js/script.js"></script>
-	<script type="module" src="js/login.js"></script>
+	<!-- <script type="module" src="js/login.js"></script> -->
 </head>
 
 <body>
 
-	<header>
-		<div class="black-bg edit">
-			<i class="fa-regular fa-pen-to-square"></i>
-			<span>Mode édition</span>
-			<a href="#modal" class="js-modal">publier les changements</a>
+	<div class="black-bg edit header">
+		<span><i class="fa-regular fa-pen-to-square"></i>
+			Mode édition
+		</span>
+		<span class="white-bg">publier les changements</span>
+	</div>
 
-			<aside id="modal" class="modal edit" aria-hidden="true" role="dialog" style="display:none;">
-				<section class="modal-wrapper js-modal-stop">
-					<h1> code html dans la modal</h1>
-					<button class="js-modal-close">
-						<span>Fermer</span>
-						<i class="fa-solid fa-xmark"></i>
-					</button>
-				</section>
-			</aside>
-		</div>
-		<div class="header">
+	<div class="body">
+
+		<header>
 			<h1>Sophie Bluel <span>Architecte d'intérieur</span></h1>
 			<nav>
 				<ul>
 					<li><a href="index.html">projets</a></li>
 					<li>contact</li>
-					<li><a href="login.html">login</a></li>
-					<button onclick="logout(this)" type="button" class="bt-deconnect logout" >logout</button>
+					<li><a href="login.html" class="btn-connect">login</a></li>
+					<button type="button" class="logout">logout</button>
 					<li><img src="./assets/icons/instagram.png" alt="Instagram"></li>
 				</ul>
 			</nav>
-		</div>
-	</header>
-	<main>
-		<section id="introduction">
-			<figure>
-				<img src="./assets/images/sophie-bluel.png" alt="">
-			</figure>
-			<article>
-				<h2>Designer d'espace</h2>
-				<p>Je raconte votre histoire, je valorise vos idées. Je vous accompagne de la conception à la livraison
-					finale du chantier.</p>
-				<p>Chaque projet sera étudié en commun, de façon à mettre en valeur les volumes, les matières et les
-					couleurs dans le respect de l’esprit des lieux, et le choix adapté des matériaux. Le suivi du
-					chantier sera assuré dans le souci du détail, le respect du planning et du budget.</p>
-				<p>En cas de besoin, une équipe pluridisciplinaire constituée de : architecte DPLG, décorateur(trice).
-				</p>
-			</article>
-		</section>
-		<section id="portfolio">
-			<h2>Mes Projets</h2>
-			<div class="filters">
-				<button class="allBtn">Tous</button>
-				<button class="objectBtn">Objets</button>
-				<button class="apartmentBtn">Appartements</button>
-				<button class="hotelBtn">Hôtels & restaurants</button>
-			</div>
-			<div class="gallery">
-				<!-- <figure>
+		</header>
+
+		<main>
+			<section id="introduction">
+				<figure>
+					<img src="./assets/images/sophie-bluel.png" alt="">
+				</figure>
+				<article>
+					<h2>Designer d'espace</h2>
+					<p>Je raconte votre histoire, je valorise vos idées. Je vous accompagne de la conception à la
+						livraison
+						finale du chantier.</p>
+					<p>Chaque projet sera étudié en commun, de façon à mettre en valeur les volumes, les matières et les
+						couleurs dans le respect de l’esprit des lieux, et le choix adapté des matériaux. Le suivi du
+						chantier sera assuré dans le souci du détail, le respect du planning et du budget.</p>
+					<p>En cas de besoin, une équipe pluridisciplinaire constituée de : architecte DPLG,
+						décorateur(trice).
+					</p>
+					<!-- <span class="modif"><i class="fa-regular fa-pen-to-square"></i>
+						Modifier
+					</span> -->
+				</article>
+			</section>
+
+			<section id="portfolio">
+				<div class="flex">
+					<h2>Mes Projets</h2>
+					<a href="#modal" class="js-modal modif"><i class="fa-regular fa-pen-to-square"></i>
+						Modifier</a>
+				</div>
+
+				<aside id="modal" class="modal edit" aria-hidden="true" role="dialog" style="display:none;">
+					<section class="modal-wrapper js-modal-stop">
+						<h1> code html dans la modal</h1>
+						<button class="js-modal-close">
+							<span>Fermer</span>
+							<i class="fa-solid fa-xmark"></i>
+						</button>
+					</section>
+				</aside>
+
+				<div class="filters">
+					<button class="allBtn">Tous</button>
+					<button class="objectBtn">Objets</button>
+					<button class="apartmentBtn">Appartements</button>
+					<button class="hotelBtn">Hôtels & restaurants</button>
+				</div>
+				<div class="gallery">
+					<!-- <figure>
                 <img src="assets/images/abajour-tahina.png" alt="Abajour Tahina">
                 <figcaption>Abajour Tahina</figcaption>
             </figure>
@@ -117,32 +131,34 @@
                 <img src="assets/images/hotel-first-arte-new-delhi.png" alt="Hotel First Arte - New Delhi">
                 <figcaption>Hotel First Arte - New Delhi</figcaption>
             </figure> -->
-			</div>
-		</section>
-		<section id="contact">
-			<h2>Contact</h2>
-			<p>Vous avez un projet ? Discutons-en !</p>
-			<form action="#" method="post">
-				<label for="name">Nom</label>
-				<input type="text" name="name" id="name">
-				<label for="email">Email</label>
-				<input type="email" name="email" id="email">
-				<label for="message">Message</label>
-				<textarea name="message" id="message" cols="30" rows="10"></textarea>
-				<input type="submit" value="Envoyer">
-			</form>
-		</section>
-	</main>
+				</div>
+			</section>
 
-	<footer>
-		<nav>
-			<ul>
-				<li>Mentions Légales</li>
-			</ul>
-		</nav>
-	</footer>
+			<section id="contact">
+				<h2>Contact</h2>
+				<p>Vous avez un projet ? Discutons-en !</p>
+				<form action="#" method="post">
+					<label for="name">Nom</label>
+					<input type="text" name="name" id="name">
+					<label for="email">Email</label>
+					<input type="email" name="email" id="email">
+					<label for="message">Message</label>
+					<textarea name="message" id="message" cols="30" rows="10"></textarea>
+					<input type="submit" value="Envoyer">
+				</form>
+			</section>
+		</main>
 
-	<script src="js/modal.js"></script>
+		<footer>
+			<nav>
+				<ul>
+					<li>Mentions Légales</li>
+				</ul>
+			</nav>
+		</footer>
+
+		<script src="js/modal.js"></script>
+	</div>
 
 </body>
 

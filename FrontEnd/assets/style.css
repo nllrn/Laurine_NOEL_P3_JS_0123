@@ -52,14 +52,17 @@ table {
 
 /** end reset css**/
 body {
-    max-width: 1140px;
-    margin: auto;
     font-family: 'Work Sans';
     font-size: 14px;
     background-color: #fffef8;
 }
 
-.header {
+.body {
+    max-width: 1140px;
+    margin: auto;
+}
+
+header {
     display: flex;
     justify-content: space-between;
     margin: 50px 0;
@@ -240,11 +243,19 @@ footer nav ul {
 }
 
 .logout {
-    display:none;
+    text-decoration: none;
+    color:black;
+    background-color: #fffef8;
+    border:none;
+    font-family: 'Work Sans';
+    font-size: 1rem;
 }
 
+.logout:hover {
+    color: #B1663C;
+}
 /* *** DASHBOARD PART *** */
-header .black-bg {
+.black-bg {
     margin:0;
     padding: 25px;
     font-size: 1rem;
@@ -258,10 +269,10 @@ header i {
     color:#fffef8;
     background-color: black;
     text-align: center;
-    /* width: 1440px; */
+    margin: none;
 }
 
-.black-bg a {
+.white-bg {
     color:black;
     background-color: #fffef8;
     border: solid black 1px;
@@ -274,15 +285,24 @@ header i {
 }
 
 /* *** MODAL PART *** */
-.edit {
-    display: block;
+.flex {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
 }
 
-button span {
-    display: block;
+.modif {
+    text-decoration: none;
+    color: black;
+    font-size: 1rem;
+    margin-left: 30px;
 }
 
-button i {
+.modal span {
+    display: none;
+}
+
+.modal i {
     color:#B1663C;
 }
 
@@ -295,7 +315,7 @@ button i {
     left: 0;
     width:100%;
     height: 100%;
-    background: rga(0, 0, 0, 0.8);
+    /* background: rga(0, 0, 0, 0.8); */
 }
 
 .modal-wrapper {
@@ -304,5 +324,9 @@ button i {
     max-width: calc(100vw - 20px);
     max-height: calc(100vh - 20px);
     padding:20px;
-    background-color: #fffef8;
+    text-align: center;
+    /* background-color: #fffef8; */
+    background-color:#CCCCFF;
+    display: flex;
+    justify-content: space-between;
 }
