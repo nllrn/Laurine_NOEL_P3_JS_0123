@@ -1,3 +1,5 @@
+// import { deleteWork } from "./modal";
+
 // appel de l'API pour récuper tout les travaux
 let allWorks = window.localStorage.getItem("allWorks");
 
@@ -35,7 +37,7 @@ function getAllWorks(allWorks) {
         figure.appendChild(image);
         figure.appendChild(title);
     }
-    
+    // deleteWork();
 };
 
 // console.log(allWorks);
@@ -93,7 +95,7 @@ hotelBtn.addEventListener("click", function(e) {
     // console.log(hotelCategory, 'hotels');
 });
 
-
+// fonction permettant la déconnexion - dès que l'utilisateur 'click' sur le 'logout' alors le compte est déconnecté et est redirigé vers l'accueil du site (index.html)
 const logoutBtn = document.querySelector(".logout");
 
     logoutBtn.addEventListener("click", function(e) {
@@ -103,10 +105,12 @@ const logoutBtn = document.querySelector(".logout");
         // console.log(logoutBtn, 'raté')
     });
 
+// permet de récupérer les identifiants de l'utilisateur sauvegardé dans le fichier login.js
 let userToken = localStorage.getItem("userToken");
 
-// const editHomepage = document.querySelector(".edit");
-    
+// permet l'apparition du dashboard
+// si l'utilisateur est connecté(e) alors la partie admin apparait et le 'login' se transforme en 'logout'
+// si l'utilisateur est déconnecté(e) alors le dashboard n'est pas visible et le 'logoout' n'est pas visible
     if (userToken !== null) {
         document.querySelector('.logout').style.display = 'block';
         document.querySelector('.btn-connect').style.display = 'none';
@@ -121,3 +125,29 @@ let userToken = localStorage.getItem("userToken");
     
     // quand je suis connectée je mets un display: block; pour qu'il puisse être vu
     // quandje suis déconnectée je mets un display: none; pour qu'il ne se voit pas
+
+    
+
+
+
+    /*let deleteWork = window.localStorage.getItem("deleteWork");
+
+
+    if (deleteWork === null) {
+            const reponse = await fetch(`http:localhost:5678/api/${id}works/`,
+                {
+                    method: "DELETE",
+                    headers: { 'Authorization': 'Bearer ${userToken}' },
+                    body: JSON.stringify(deleteWork),
+                });
+            const deleteWork = await reponse.json();
+    
+            window.localStorage.setItem("deleteWork");
+        // } else {
+        //     deleteWork = JSON.parse(deleteWork);
+         };
+    
+    deleteWork.addEventListener("click", async function (e) {
+    
+        window.localStorage.removeItem("deleteWork");
+    });*/

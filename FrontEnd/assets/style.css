@@ -283,7 +283,7 @@ footer nav ul {
     text-decoration: none;
 }
 
-/* *** MODAL PART *** */
+/* *** MODAL PART 1 *** */
 .flex {
     display: flex;
     justify-content: center;
@@ -311,8 +311,8 @@ footer nav ul {
 
 .modal-wrapper {
     /* overflow: auto; */
-    width: 630px;
-    height: 730px;
+    width: 530px;
+    height: 630px;
     max-width: calc(100vw - 20px);
     max-height: calc(100vh - 20px);
     padding:20px;
@@ -322,12 +322,12 @@ footer nav ul {
     border-radius: 10px;
 }
 
-/* .modal-wrapper {
-    background-color: red;
-    border: none;
-} */
-
 .modal-flex-top {
+    display: flex;
+    /* justify-content: space-between; */
+    justify-content: flex-end;
+}
+.modal-flex-top2 {
     display: flex;
     justify-content: space-between;
 }
@@ -340,19 +340,14 @@ footer nav ul {
     font-size: 20px;
 }
 
-/* flèche retour en arrière ATTENTION à dire en JS qu'elle est invisible mais lorsque l'admin clique sur le button 'valider' elle apparait sur la fenêtre d'après */
-.go-back {
-    visibility: hidden;
-}
-
-.modal-flex-top button {
+.modal-flex-top button, .modal-flex-top2 button {
     background-color: #fffef8;
     border: none;
 }
 
 h3 {
     font-size: 1.5rem;
-    padding: 20px;
+    padding: 15px;
 }
 
 hr {
@@ -366,7 +361,7 @@ hr {
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     grid-column-gap: 20px;
     grid-row-gap: 20px;
-    margin: 30px 60px 40px 60px;
+    margin: 30px 40px;
 }
 
 .gallery-modal img {
@@ -388,7 +383,7 @@ hr {
     align-content: space-around;
 }
 
-.modal-flex-bottom button {
+.modal-flex-bottom a {
     margin: 10px;
     /* margin-left: 10px; */
     padding: 10px;
@@ -412,6 +407,9 @@ hr {
     border:none;
     color: #fffef8;
     background-color: black;
+    padding: 2px 4px;
+    margin-left: -22px;
+    margin-top: 4px;
 }
 
 .deleteWorkBtn i {
@@ -422,4 +420,18 @@ hr {
     color: #B1663C;
     background-color: #fffef8;
     border: none;
+}
+
+/* *** MODAL PART 2 *** */
+.modal-wrapper2 {
+    /* overflow: auto; */
+    width: 530px;
+    height: 630px;
+    max-width: calc(100vw - 20px);
+    max-height: calc(100vh - 20px);
+    padding:20px;
+    text-align: center;
+    /* background-color: #fffef8; */
+    background-color: cornflowerblue;
+    border-radius: 10px;
 }

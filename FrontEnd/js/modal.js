@@ -5,11 +5,13 @@ const openModal = function (e) {
     const target = document.querySelector(e.target.getAttribute('href'));
     target.style.display = null;
     target.removeAttribute('aria-hidden');
-    target.setAttribute('aria-modal', 'true');
+    target.setAttribute('aria-modal', true);
     modal = target;
     modal.addEventListener("click", closeModal);
     modal.querySelector('.js-modal-close').addEventListener("click", closeModal);
+    modal.querySelector('.js-modal-close2').addEventListener("click", closeModal);
     modal.querySelector('.js-modal-stop').addEventListener("click", stopPropagation);
+    modal.querySelector('.js-modal-stop2').addEventListener("click", stopPropagation);
 };
 
 const closeModal = function (e) {
@@ -20,7 +22,9 @@ const closeModal = function (e) {
     modal.removeAttribute('aria-modal');
     modal.removeEventListener("click", closeModal);
     modal.querySelector('.js-modal-close').removeEventListener("click", closeModal);
+    modal.querySelector('.js-modal-close2').removeEventListener("click", closeModal);
     modal.querySelector('.js-modal-stop').removeEventListener("click", stopPropagation);
+    modal.querySelector('.js-modal-stop2').removeEventListener("click", stopPropagation);
     modal = null;
 };
 
@@ -36,7 +40,7 @@ let allWorksModal = window.localStorage.getItem("allWorksModal");
 
 if (allWorksModal ===  null) {
     const reponse = await fetch("http://localhost:5678/api/works");
-    const allWorksModal = await reponse.json();
+    allWorksModal = await reponse.json();
 
     const valeurAllWorksModal = JSON.stringify(allWorksModal);
     window.localStorage.setItem("allWorksModal", valeurAllWorksModal);
@@ -53,43 +57,156 @@ function getAllWorksModal(allWorksModal) {
 
         const figureModal = document.createElement("figure");
 
-        const deleteWorkBtn = document.createElement("button");
-        deleteWorkBtn.classList.add("deleteWorkBtn");
-        // deleteBtn.innerText = 'supprimer';
-
-        const deleteSpanWork = document.createElement("span");
-        deleteSpanWork.innerText = 'supprimer'; 
-
-        const iconTrashcan = document.createElement("i");
-        iconTrashcan.classList.add("fa-solid", "fa-trash-can")
-        
-
         const imageModal = document.createElement("img");
         imageModal.setAttribute("crossorigin", "anonymous");
         imageModal.src = projectsModal.imageUrl;
+        imageModal.alt = projectsModal.title;
+        imageModal.id = projectsModal.id;
+        console.log(projectsModal.id);
+
+        const deleteWorkBtn = document.createElement("button");
+        deleteWorkBtn.classList.add("deleteWorkBtn");
+
+        const deleteSpanWork = document.createElement("span");
+        deleteSpanWork.innerText = 'supprimer';
+
+        const iconTrashcan = document.createElement("i");
+        iconTrashcan.classList.add("fa-solid", "fa-trash-can");
 
         const titleModal = document.createElement("figcaption");
-        titleModal.innerText = 'éditer'
+        titleModal.innerText = 'éditer';
 
         sectionGalleryModal.appendChild(figureModal);
 
         figureModal.appendChild(imageModal);
         figureModal.appendChild(deleteWorkBtn);
+        figureModal.appendChild(titleModal);
         deleteWorkBtn.appendChild(iconTrashcan);
         deleteWorkBtn.appendChild(deleteSpanWork);
-        figureModal.appendChild(titleModal);
-        
-    }
-};
 
+
+        deleteWorkBtn.addEventListener("click", async function (e) {
+            e.preventDefault();
+
+            let userToken = localStorage.getItem("userToken");
+
+            const reponse = await fetch(`http://localhost:5678/api/works/${projectsModal.id}`,
+                {
+                    method: "DELETE",
+                    headers: { 'Authorization': `Bearer ${userToken}` },
+                });
+
+            const deleteOneWork = await reponse.json();
+            console.log(deleteOneWork);
+        });
+
+    }
+
+
+};    
+
+console.log(allWorksModal);
 getAllWorksModal(allWorksModal);
 
+/*let userToken = localStorage.getItem("userToken");
 
-// const deleteWork = document.querySelector(".deleteWorkBtn");
+    const deleteOneWork = document.querySelector(".deleteWorkBtn");
 
-// deleteWork.addEventListener("click", function(e) {
-//     const deleteOneWork = 
-// })
+    deleteOneWork.addEventListener("click", async function (e) {
+        e.preventDefault();
+
+        
+        const reponse = await fetch(`http://localhost:5678/api/works/${projectsModal.id}`,
+            {
+                method: "DELETE",
+                headers: { 'Authorization': `Bearer ${userToken}` },
+                body: JSON.stringify(deleteOneWork),
+            });
+
+        // const valeurAllWorksModal = JSON.stringify(allWorksModal);
+        // window.localStorage.setItem("allWorksModal", valeurAllWorksModal);
+
+        const deleteOneWork = await reponse.json();
+
+    });
+    console.log(deleteOneWork);*/
+
+
+// permet de récupérer les identifiants de l'utilisateur sauvegardé dans le fichier login.js
+/*let userToken = localStorage.getItem("userToken");
+
+const deleteOneWork = document.querySelector(".deleteWorkBtn");
+
+deleteOneWork.addEventListener("click", async function() {
+
+    const id = this.id.value;
+
+    const reponse = await fetch(`http://localhost:5678/api/works/${id}`,
+        {
+            method: "DELETE",
+            headers: { 'Authorization': `Bearer ${userToken}` },
+            body: JSON.stringify(deleteOneWork),
+        });
+
+    const deleteOneWork = await reponse.json();
+
+});
+console.log(deleteOneWork);*/
+
+
+/*let deleteWork = document.querySelector(".deleteWorkBtn");
+let deleteOneWork = window.localStorage.getItem("deleteOneWork");
+
+
+if (deleteOneWork === null) {
+    const reponse = await fetch(`http://localhost:5678/api/works/` + id,
+        {
+            method: "DELETE",
+            headers: { 'Authorization': `Bearer ${userToken}` },
+            body: JSON.stringify(deleteOneWork),
+        });
+    const deleteOneWork = await reponse.json();
+    
+    window.localStorage.setItem("deleteOneWork");
+    // } else {
+    //     deleteOneWork = JSON.parse(deleteOneWork);
+};
+
+// deleteOneWork.addEventListener("click", async function (e) {
+
+
+
+deleteWork.addEventListener("click", async function (event) {
+    const id = event.target.dataset.id;
+    window.localStorage.removeItem("deleteOneWork");
+});
+    // window.localStorage.removeItem("projectsModal.id");
+    // console.log(deleteWork);
+
+
+export async function deleteWork() {
+
+}*/
+
+// let deleteWork = document.querySelector(".deleteWorkBtn");
+
+// deleteWork.addEventListener("click", async function(e) {
+//     const id = e.target.dataset.id;
+//     for(let i=0; i < allWorksModal.length; i++) {
+//         const reponse = await fetch(`http://localhost:5678/api/works/${id}`, {
+//                         method: "DELETE",
+//                         headers: {'Authorization': `Bearer ${userToken}`},
+//                         body : JSON.stringify(deleteWork),
+//         });
+    
+//         const deleteWork = await reponse.json();
+        
+//     }
+
+//     window.localStorage.removeItem("allWorksModal");
+//     console.log(deleteWork);
+
+// });
 
 
 

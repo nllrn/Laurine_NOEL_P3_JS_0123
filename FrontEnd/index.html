@@ -58,7 +58,7 @@
 					<p>En cas de besoin, une équipe pluridisciplinaire constituée de : architecte DPLG,
 						décorateur(trice).
 					</p>
-					<!-- <span class="modif"><i class="fa-regular fa-pen-to-square"></i>
+					<!-- <span class="modif edit"><i class="fa-regular fa-pen-to-square"></i>
 						Modifier
 					</span> -->
 				</article>
@@ -67,7 +67,8 @@
 			<section id="portfolio">
 				<div class="flex">
 					<h2>Mes Projets</h2>
-					<a href="#modal" class="js-modal modif"><i class="fa-regular fa-pen-to-square"></i>
+					<a href="#modal" class="js-modal edit modif">
+						<i class="fa-regular fa-pen-to-square"></i>
 						Modifier</a>
 				</div>
 
@@ -76,11 +77,6 @@
 					<section class="modal-wrapper js-modal-stop">
 
 						<div class="modal-flex-top">
-							<button class="go-back">
-								<span>Retour en arrière</span>
-								<i class="fa-solid fa-arrow-left"></i>
-							</button>
-
 							<button class="js-modal-close">
 								<span>Fermer</span>
 								<i class="fa-solid fa-xmark"></i>
@@ -96,9 +92,27 @@
 						<hr>
 
 						<div class="modal-flex-bottom">
-							<button class="add-btn">Ajouter une photo</button>
+							<a href="#modal2"class="add-btn js-modal edit modif">Ajouter une photo</a>
 
-							<button class="delete-btn">Supprimer la galerie</button>
+							<aside id="modal2" class="modal edit" aria-hidden="true" role="dialog" style="display:none;">
+								
+								<section class="modal-wrapper2 js-modal-stop2">
+									<div class="modal-flex-top2">
+										<button class="go-back">
+											<span>Retour en arrière</span>
+											<i class="fa-solid fa-arrow-left"></i>
+										</button>
+			
+										<button class="js-modal-close2">
+											<span>Fermer</span>
+											<i class="fa-solid fa-xmark"></i>
+										</button>
+									</div>
+
+								</section>
+							</aside>
+
+							<a href="#" class="delete-btn">Supprimer la galerie</a>
 						</div>
 						
 
