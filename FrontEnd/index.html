@@ -21,7 +21,8 @@
 <body>
 
 	<div class="black-bg edit header">
-		<span><i class="fa-regular fa-pen-to-square"></i>
+		<span>
+			<i class="fa-regular fa-pen-to-square"></i>
 			Mode édition
 		</span>
 		<span class="white-bg">publier les changements</span>
@@ -92,7 +93,7 @@
 						<hr>
 
 						<div class="modal-flex-bottom">
-							<a href="#modal2"class="add-btn js-modal edit modif">Ajouter une photo</a>
+							<a href="#modal2" class="add-btn js-modal edit modif js-modal-2-trigger">Ajouter une photo</a>
 
 							<aside id="modal2" class="modal edit" aria-hidden="true" role="dialog" style="display:none;">
 								
@@ -109,6 +110,31 @@
 										</button>
 									</div>
 
+									<h3>Ajout photo</h3>
+
+									<form name="add-project" id="add-project" method="post">
+										<div class="import-photo">
+											<input type="file" alt="title" nameholder="+ Ajouter photo">
+										</div>
+										
+										<label for="title">Titre</label>
+										<input type="text">
+										<label for="categories">Catégorie</label>
+
+										<ul>
+											<li>Catégorie
+												<ul>
+													<li>Objets</li>
+													<li>Appartements</li>
+													<li>Hôtels & restaurants</li>
+												</ul>
+											</li>
+										</ul>
+									</form>
+
+									<hr>
+
+									<button class="confirm-btn">Valider</button>
 								</section>
 							</aside>
 
@@ -125,6 +151,7 @@
 					<button class="apartmentBtn">Appartements</button>
 					<button class="hotelBtn">Hôtels & restaurants</button>
 				</div>
+				
 				<div class="gallery">
 					<!-- <figure>
                 <img src="assets/images/abajour-tahina.png" alt="Abajour Tahina">
@@ -171,6 +198,7 @@
                 <figcaption>Hotel First Arte - New Delhi</figcaption>
             </figure> -->
 				</div>
+				
 			</section>
 
 			<section id="contact">

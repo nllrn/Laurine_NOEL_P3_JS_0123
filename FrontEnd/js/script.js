@@ -100,13 +100,14 @@ const logoutBtn = document.querySelector(".logout");
 
     logoutBtn.addEventListener("click", function(e) {
         e.preventDefault();
-        localStorage.removeItem("userToken");
+        sessionStorage.removeItem("userToken");
         window.location.href = "index.html";
         // console.log(logoutBtn, 'raté')
     });
 
 // permet de récupérer les identifiants de l'utilisateur sauvegardé dans le fichier login.js
-let userToken = localStorage.getItem("userToken");
+let userToken = sessionStorage.getItem("userToken");
+// console.log(userToken)
 
 // permet l'apparition du dashboard
 // si l'utilisateur est connecté(e) alors la partie admin apparait et le 'login' se transforme en 'logout'
@@ -125,29 +126,3 @@ let userToken = localStorage.getItem("userToken");
     
     // quand je suis connectée je mets un display: block; pour qu'il puisse être vu
     // quandje suis déconnectée je mets un display: none; pour qu'il ne se voit pas
-
-    
-
-
-
-    /*let deleteWork = window.localStorage.getItem("deleteWork");
-
-
-    if (deleteWork === null) {
-            const reponse = await fetch(`http:localhost:5678/api/${id}works/`,
-                {
-                    method: "DELETE",
-                    headers: { 'Authorization': 'Bearer ${userToken}' },
-                    body: JSON.stringify(deleteWork),
-                });
-            const deleteWork = await reponse.json();
-    
-            window.localStorage.setItem("deleteWork");
-        // } else {
-        //     deleteWork = JSON.parse(deleteWork);
-         };
-    
-    deleteWork.addEventListener("click", async function (e) {
-    
-        window.localStorage.removeItem("deleteWork");
-    });*/

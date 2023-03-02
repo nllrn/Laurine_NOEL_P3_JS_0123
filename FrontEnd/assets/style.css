@@ -174,14 +174,14 @@ li:hover, li a:hover {
     margin-bottom: 20px;
 }
 
-#contact form, .login form {
+#contact form, .login form, .modal-wrapper2 form {
     text-align: left;
     margin-top: 30px;
     display: flex;
     flex-direction: column;
 }
 
-#contact input, .login input, .login button, .filters button {
+#contact input, .login input, .login button, .filters button, .modal-wrapper2 label {
     height: 50px;
     font-size: 1.2em;
     border: none;
@@ -192,7 +192,7 @@ li:hover, li a:hover {
     margin: 2em 0 1em 0;
 }
 
-#contact textarea {
+#contact textarea, .modal-wrapper2 label {
     border: none;
     box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
 }
@@ -324,7 +324,6 @@ footer nav ul {
 
 .modal-flex-top {
     display: flex;
-    /* justify-content: space-between; */
     justify-content: flex-end;
 }
 .modal-flex-top2 {
@@ -383,7 +382,7 @@ hr {
     align-content: space-around;
 }
 
-.modal-flex-bottom a {
+.modal-flex-bottom a, .confirm-btn {
     margin: 10px;
     /* margin-left: 10px; */
     padding: 10px;
@@ -395,7 +394,7 @@ hr {
     font-weight: 700;
 }
 
-.add-btn {
+.add-btn, .confirm-btn {
     color: white;
     background-color: #1D6154;
     border: none;
@@ -431,7 +430,18 @@ hr {
     max-height: calc(100vh - 20px);
     padding:20px;
     text-align: center;
-    /* background-color: #fffef8; */
-    background-color: cornflowerblue;
+    background-color: #fffef8;
     border-radius: 10px;
+}
+
+.import-photo {
+    background-color: #E8F1F6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.add-project input {
+    background-color: #CBD6DC;
+    color: #306685;
 }
