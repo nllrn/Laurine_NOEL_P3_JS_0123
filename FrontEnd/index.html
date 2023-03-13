@@ -15,7 +15,6 @@
 	<!-- lien javascript -->
 	<script type="module" src="js/script.js"></script>
 	<script type="module" src="js/modal.js"></script>
-	<!-- <script type="module" src="js/login.js"></script> -->
 </head>
 
 <body>
@@ -96,45 +95,45 @@
 							<a href="#modal2" class="add-btn js-modal edit modif js-modal-2-trigger">Ajouter une photo</a>
 
 							<aside id="modal2" class="modal edit" aria-hidden="true" role="dialog" style="display:none;">
-								
+							
 								<section class="modal-wrapper2 js-modal-stop2">
 									<div class="modal-flex-top2">
 										<button class="go-back">
 											<span>Retour en arrière</span>
 											<i class="fa-solid fa-arrow-left"></i>
 										</button>
-			
+							
 										<button class="js-modal-close2">
 											<span>Fermer</span>
 											<i class="fa-solid fa-xmark"></i>
 										</button>
 									</div>
-
+							
 									<h3>Ajout photo</h3>
-
-									<form name="add-project" id="add-project" method="post">
+							
+									<form name="add-project" id="add-project" method="post" enctype="multipart/form-data">
 										<div class="import-photo">
-											<input type="file" alt="title" nameholder="+ Ajouter photo">
+											<input type="file" name="image" id="file" alt="title" accept="image/png, image/jpeg">
+											<p>jpg, png : 4mo max</p>
 										</div>
-										
+									
 										<label for="title">Titre</label>
-										<input type="text">
-										<label for="categories">Catégorie</label>
+										<input type="text" name="title" id="title">
 
-										<ul>
-											<li>Catégorie
-												<ul>
-													<li>Objets</li>
-													<li>Appartements</li>
-													<li>Hôtels & restaurants</li>
-												</ul>
-											</li>
-										</ul>
+										<label for="categories-selection">Catégorie</label>
+										<select name="category" id="category">
+											<option value=""></option>
+											<option value="1">Objets</option>
+											<option value="2">Appartements</option>
+											<option value="3">Hôtels & restaurants</option>
+										</select>
+
+										<div class="separation"></div>
+							
+										<button class="confirm-btn">Valider</button>
 									</form>
-
-									<hr>
-
-									<button class="confirm-btn">Valider</button>
+							
+									
 								</section>
 							</aside>
 
@@ -144,6 +143,8 @@
 
 					</section>
 				</aside>
+
+				
 
 				<div class="filters">
 					<button class="allBtn">Tous</button>
